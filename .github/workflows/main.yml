@@ -23,6 +23,8 @@ jobs:
           fetch-depth: 0
       - name: Debug ownership and Git configuration
         run: |
+          ls -l .
+          ls -l /
           ls -l /github
           ls -l /github/workspace
           git config --global --list
