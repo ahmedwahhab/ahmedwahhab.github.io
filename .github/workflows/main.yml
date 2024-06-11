@@ -25,6 +25,7 @@ jobs:
         run: |
           ls -l .
           ls -l /
+          pwd
           ls -l /github
           ls -l /github/workspace
           git config --global --list
