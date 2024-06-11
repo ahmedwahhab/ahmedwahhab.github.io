@@ -21,31 +21,6 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - name: Debug ownership and Git configuration
-        run: |
-          ls -l .
-          ls -l /
-          pwd
-          ls -l /.github
-          ls -l /github/workspace
-          git config --global --list
-          git config --list
-      - name: Change ownership of the repository directory
-        run: sudo chown -R $USER:$USER /github/workspace
-      - name: Debug ownership and Git configuration
-        run: |
-          ls -l /github
-          ls -l /github/workspace
-          git config --global --list
-          git config --list
-      - name: Configure Git to recognize safe directory
-        run: git config --global --add safe.directory /github/workspace
-      - name: Debug ownership and Git configuration
-        run: |
-          ls -l /github
-          ls -l /github/workspace
-          git config --global --list
-          git config --list
       - name: "Configure AWS Credentials"
         uses: aws-actions/configure-aws-credentials@v4.0.2
         with:
