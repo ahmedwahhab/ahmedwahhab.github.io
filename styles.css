@@ -4,6 +4,7 @@ body {
     padding: 0;
     line-height: 1.6;
     color: #333;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 header {
@@ -11,28 +12,13 @@ header {
     color: #fff;
     padding: 10px 0;
     text-align: center;
-}
-
-header nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    padding: 0;
-}
-
-header nav ul li {
-    margin: 0 20px;
-}
-
-header nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    padding: 5px 10px;
+    transition: background-color 0.3s;
 }
 
 header nav ul li a:hover {
     background: #0056b3;
     border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
 section {
@@ -42,31 +28,11 @@ section {
     background: #f9f9f9;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s;
 }
 
-section#home {
-    background: #007BFF;
-    color: #fff;
-    text-align: center;
-    padding: 50px 20px;
-    border-radius: 0;
-    box-shadow: none;
-}
-
-.intro {
-    max-width: 600px;
-    margin: auto;
-}
-
-.profile-img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-bottom: 20px;
-}
-
-h1, h2, h3 {
-    color: #333;
+section:hover {
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
 }
 
 footer {
@@ -76,8 +42,28 @@ footer {
     color: #fff;
     margin-top: 20px;
     border-radius: 0;
+    transition: background-color 0.3s;
 }
 
-footer p {
-    margin: 0;
+<button id="dark-mode-toggle">Toggle Dark Mode</button>
+
+<script>
+document.getElementById('dark-mode-toggle').addEventListener('click', function() {
+    document.body.classList.toggle('dark-mode');
+});
+</script>
+
+<style>
+.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
 }
+
+.dark-mode header {
+    background-color: #1e1e1e;
+}
+
+.dark-mode footer {
+    background-color: #1e1e1e;
+}
+</style>
